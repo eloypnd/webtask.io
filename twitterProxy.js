@@ -54,10 +54,10 @@ const setStorage = (store, data) => {
 }
 
 function handleError (res) {
-  if (!response.ok) {
+  if (!res.ok) {
     throw res
   }
-  return response.json()  //we only get here if there is no error
+  return res.json()
 }
 
 const getTwitterToken = (key, secret) => {
