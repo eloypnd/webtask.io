@@ -53,6 +53,13 @@ const setStorage = (store, data) => {
   })
 }
 
+function handleError (res) {
+  if (!response.ok) {
+    throw res
+  }
+  return response.json()  //we only get here if there is no error
+}
+
 const getTwitterToken = (key, secret) => {
   const credentials = Buffer.from(
     encodeURI(key) + ':' + encodeURI(secret)
